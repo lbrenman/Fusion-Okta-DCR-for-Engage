@@ -16,5 +16,21 @@ Instructions
 
 * [Override](https://docs.axway.com/bundle/amplify_integration/page/docs/designer_module/designer_module_artifacts/connections/index.html#configure-an-override-connection) the Keycloak API connector in Manager and enter the appropriate values for your Okta tenant details and your API Key.
 
+* Link the integration to your Identity Provider in Fusion -> Manager Identity Provider as follows:
+  * Open the Credential Provisioning integration, `cred-prov-flow-okta` in the imported project
+  * Click the Credential Provision trigger artifact and select your Identity Provider and click Save
+    > Note that if you get an error selecting your Identity provider you can delete the Credential Provisioning component and re-add it and then select the Identity provider
+  * In Fusion Manager, Open the Identity provider and select the Credential Provisioning integration you just updated in the Link Integration picker and select the desired data plane and click Save
 
-WORK IN PROGRESS - MORE INSTRUCTIONS COMING SOON
+* Now you can select OAuth 2.0 for any of your Fusion APIs and create a Governance Rule that uses the Identity Provider and activate your API
+
+* Since we'll be testing the OAuth 2.0 API from Engage, you'll need to configure CORS properly for your API as shown below:
+
+  ![Imgur](https://i.imgur.com/5VQ8KRQ.png)
+
+* When you activate your API it will be discovered in Engage and you can create product based on it
+
+* When Engage users discover the product and associated API, they can subscribe and register an application. Then when the user requests a credential, the credential provisioning integration will trigger and the credentials sent to Engage for the user to use the OAuth 2.0 Fusion API
+
+
+Instructions [here](https://github.com/lbrenman/Fusion-Keycloak-DCR-for-Engage) are for Keycloak but may be useful until these docs are complete
