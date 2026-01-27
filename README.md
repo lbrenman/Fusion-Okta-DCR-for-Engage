@@ -30,7 +30,10 @@ Instructions
 
 * When you activate your API it will be discovered in Engage and you can create product based on it
 
-* When Engage users discover the product and associated API, they can subscribe and register an application. Then when the user requests a credential, the credential provisioning integration will trigger and the credentials sent to Engage for the user to use the OAuth 2.0 Fusion API
+* When Engage users discover the product and associated API, they can subscribe and register an application. Then when the user requests a credential, the credential provisioning integration will trigger and the credentials sent to Engage for the user to use the OAuth 2.0 Fusion API.
 
+Note that with Okta, the client credentials OAuth flow is not supported from browsers so you will need to retrieve your client_id and client_secret from the Engage credential and use it in Curl or Postman.
+
+You can use the Authorization Code flow (with PKCE) from Engage in the browser.
 
 Instructions [here](https://github.com/lbrenman/Fusion-Keycloak-DCR-for-Engage) are for Keycloak but may be useful until these docs are complete
