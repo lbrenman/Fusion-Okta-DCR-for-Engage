@@ -14,7 +14,7 @@ For testing you can reference these documents:
 Instructions
 * [Import](https://docs.axway.com/bundle/amplify_integration/page/docs/manager_module/manage_the_environments/index.html#export-or-import-a-project) the project zip file into your tenant
 
-* [Override](https://docs.axway.com/bundle/amplify_integration/page/docs/designer_module/designer_module_artifacts/connections/index.html#configure-an-override-connection) the Keycloak API connector in Manager and enter the appropriate values for your Okta tenant details and your API Key.
+* Edit the Okta API connector in the project or [Override](https://docs.axway.com/bundle/amplify_integration/page/docs/designer_module/designer_module_artifacts/connections/index.html#configure-an-override-connection) the Keycloak API connector in Manager and enter the appropriate values for your Okta tenant details and your API Key.
 
 * Link the integration to your Identity Provider in Fusion -> Manager Identity Provider as follows:
   * Open the Credential Provisioning integration, `cred-prov-flow-okta` in the imported project
@@ -35,5 +35,7 @@ Instructions
 Note that with Okta, the client credentials OAuth flow is not supported from browsers so you will need to retrieve your client_id and client_secret from the Engage credential and use it in Curl or Postman.
 
 You can use the Authorization Code flow (with PKCE) from Engage in the browser.
+
+As such, you will need to request different credentials for machine-to-machine use of the API (client credentials flow) and browser use of the API (Authorization Code flow with PKCE).
 
 Instructions [here](https://github.com/lbrenman/Fusion-Keycloak-DCR-for-Engage) are for Keycloak but may be useful until these docs are complete
