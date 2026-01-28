@@ -15,6 +15,8 @@ Instructions
 * [Import](https://docs.axway.com/bundle/amplify_integration/page/docs/manager_module/manage_the_environments/index.html#export-or-import-a-project) the project zip file into your tenant
 
 * Edit the Okta API connector in the project or [Override](https://docs.axway.com/bundle/amplify_integration/page/docs/designer_module/designer_module_artifacts/connections/index.html#configure-an-override-connection) the Keycloak API connector in Manager and enter the appropriate values for your Okta tenant details and your API Key.
+  ![Imgur](https://i.imgur.com/FAegZrD.png)
+  ![Imgur](https://i.imgur.com/uNxiURq.png)
 
 * Link the integration to your Identity Provider in Fusion -> Manager Identity Provider as follows:
   * Open the Credential Provisioning integration, `cred-prov-flow-okta` in the imported project
