@@ -1,6 +1,6 @@
 # Amplify Fusion/Engage OAuth 2.0 Client Provisioning For Okta
 
-This Amplify Fusion project contains an integration and associated connector that handle Amplify Engage credential provisioning requests. It enables self-service onboarding for Engage subscribers consuming OAuth 2.0-secured APIs managed by Fusion, allowing them to retrieve their OAuth 2.0 credentials without manual administrator involvement.
+This Amplify Fusion project contains an integration and associated connector that handle Amplify Engage credential provisioning requests. It enables self-service onboarding for Engage subscribers consuming OAuth 2.0-secured APIs managed by Fusion, allowing them to retrieve their OAuth 2.0 credentials without manual administrator involvement. This is described [here](https://gist.github.com/lbrenman/c8c7545185d02e7f0c5ff3a316783782).
 
 The integration leverages Okta's Dynamic Client Registration (DCR) capabilities to automatically create and configure OAuth clients at subscription time.
 
