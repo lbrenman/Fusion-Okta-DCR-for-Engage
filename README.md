@@ -40,6 +40,6 @@ You can use the Authorization Code flow (with PKCE) from Engage in the browser.
 
 As such, you will need to request different credentials for machine-to-machine use of the API (client credentials flow) and browser use of the API (Authorization Code flow with PKCE).
 
-Currently the integration create an Okta client that is only suitable for client credentials flow NOT in a browser (as described able).
+Currently the integration create an Okta client that is only suitable for client credentials flow NOT in a browser (as described above).
 
 Work is in progress for the integration to support other OAuth flows.
