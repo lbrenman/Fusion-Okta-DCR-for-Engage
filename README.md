@@ -11,14 +11,18 @@ You should also validate that you can call your API with Okta OAuth 2.0 from Pos
 For testing you can reference these documents:
 * [Amplify Integration - Use Okta for OAuth API Authentication](https://gist.github.com/lbrenman/b34f143aa6edca868db74396c7092b48)
 
-Instructions
+## Instructions
+
 * [Import](https://docs.axway.com/bundle/amplify_integration/page/docs/manager_module/manage_the_environments/index.html#export-or-import-a-project) the project zip file into your tenant
 
 * Edit the Okta API connector in the project or [Override](https://docs.axway.com/bundle/amplify_integration/page/docs/designer_module/designer_module_artifacts/connections/index.html#configure-an-override-connection) the Keycloak API connector in Manager and enter the appropriate values for your Okta tenant details and your API Key.
+
   ![Imgur](https://i.imgur.com/FAegZrD.png)
   ![Imgur](https://i.imgur.com/uNxiURq.png)
 
 * Edit the `cred-prov-flow-okta-service` Service and set the `okta_group_id` variable to the Okta group that you want to assign to the client. I assigned the client to the built-in `Everyone` group.
+  
+  ![Imgur](https://i.imgur.com/Mqp9p8q.png)
 
 * Link the integration to your Identity Provider in Fusion -> Manager Identity Provider as follows:
   * Open the Credential Provisioning integration, `cred-prov-flow-okta` in the imported project
@@ -36,10 +40,14 @@ Instructions
 
 * When Engage users discover the product and associated API, they can subscribe and register an application. Then when the user requests a credential, the credential provisioning integration will trigger and the credentials sent to Engage for the user to use the OAuth 2.0 Fusion API.
 
+## Known Caveats
+
 Note that with Okta, the client credentials OAuth flow is not supported from browsers so you will need to retrieve your client_id and client_secret from the Engage credential and use it in Curl or Postman.
 
-You can use the Authorization Code flow (with PKCE) and Password flows from Engage in the browser.
+You can use the Authorization Code flow (with PKCE) flows from Engage in the browser.
 
 As such, you will need to request different credentials for machine-to-machine use of the API (client credentials flow) and browser use of the API (Authorization Code flow with PKCE). The Credential Provisioning flow comprehends this and will gracefully error out if the user requests client credential AND other flows.
 
-Work is in progress for the integration to support other OAuth flows.
+When the consumer tries to call the API with Auth Code with PKCE flow, then may need to select External for the credential origin and manually enter the client id before clicking authorize.
+
+Password OAuth flow still in development, however, Okta has deprecated it and discourages it but it is still technically supported.
