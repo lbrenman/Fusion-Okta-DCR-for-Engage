@@ -4,6 +4,8 @@ This Amplify Fusion project contains an integration and associated connector tha
 
 The integration leverages Okta's Dynamic Client Registration (DCR) capabilities to automatically create and configure OAuth clients at subscription time.
 
+It is provided as an example of an Okta Credential Provisioning flow for Fusion. You can use it as is if it serves your needs or can be used as a starting point or example for your implementation.
+
 You should have access to your Okta tenant and you should have Fusion integrated with Engage as described [here](https://docs.axway.com/bundle/amplify_integration/page/docs/manager_module/manage_marketplace/index.html).
 
 You should also validate that you can call your API with Okta OAuth 2.0 from Postman using a manually created Okta test client and that client id is added to a Fusion Test App in Manager.
