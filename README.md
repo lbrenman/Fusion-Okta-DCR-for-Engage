@@ -13,6 +13,12 @@ You should also validate that you can call your API with Okta OAuth 2.0 from Pos
 For testing you can reference these documents:
 * [Amplify Integration - Use Okta for OAuth API Authentication](https://gist.github.com/lbrenman/b34f143aa6edca868db74396c7092b48)
 
+The DCR flow supports the following flows requests:
+* client credentials only
+* auth code with PKCE only
+
+The password flow type is not supported as it [deprecated](https://oauth.net/2/grant-types/password/).
+
 ## Instructions
 
 * [Import](https://docs.axway.com/bundle/amplify_integration/page/docs/manager_module/manage_the_environments/index.html#export-or-import-a-project) the project zip file into your tenant
